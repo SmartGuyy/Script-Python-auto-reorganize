@@ -11,7 +11,7 @@ import win32con
 import win32security
 
 #le dossier qui sera trié
-mypath = 'test/'
+mypath = 'directorytosort/'
 # on récupère chaque fichier dans ce dossier et on le stocke dans un tableau
 fichiersdansdossier = [f for f in listdir(mypath) if isfile(join(mypath, f))]
 # on récupère le nombre de fichiers dans le dossier mypath
@@ -57,7 +57,7 @@ while i < nombredefichiers:
 		print ("Le fichier est vieux de plus de 2 semaines, il a donc été déplacé vers le dossier d'archivage de son créateur.")
 		
 		# ATTENTION : le dossier de destination DOIT être créer avant de lancer le script pour chaque utilisateur.
-		movefile(mypath, fichiersdansdossier[i], name)
+		movefile(mypath, fichiersdansdossier[i], "archives\\"+name)
 
 	else :
 		print ("Le fichier est récent et sera archivé dans " + str(daysbeforeexpiration) + " heures.")

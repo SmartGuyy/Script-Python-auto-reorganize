@@ -7,7 +7,7 @@ from os.path import isfile, join
 def movefile(mypath, filetomove, destination):
 	# si le dossier de destination n'existe pas, le créer
 	if os.path.isdir(destination) == False: os.makedirs(destination);
-	#shutil.commande (Source, Destination)
+	# on déplace le fichier de la manière suivante : shutil.move (Source, Destination)
 	shutil.move(mypath+filetomove, destination)
 
  	#shutil.move(filetomove, 'test\\') working
