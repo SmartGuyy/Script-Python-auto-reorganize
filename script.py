@@ -33,14 +33,12 @@ if not nombredefichiers:
 # récupère et trie les fichiers un par un
 while i < nombredefichiers:
 	
-	# on ouvre une instance du fichier pour récupérer ses informations
-	open (mypath+fichiersdansdossier[i], "w").close ()
+	# on récupère les informations sur le fichier
 	sd = win32security.GetFileSecurity (mypath+fichiersdansdossier[i], win32security.OWNER_SECURITY_INFORMATION)
 	owner_sid = sd.GetSecurityDescriptorOwner ()
 	
 	# on récupère les valeurs de nom d'utilisateur et de domaine du fichier
 	name, domain, type = win32security.LookupAccountSid (None, owner_sid)
-
 
 	# secondes passées depuis la création du fichier
 	filecreationtime = os.path.getctime(mypath+fichiersdansdossier[i])
