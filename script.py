@@ -1,4 +1,4 @@
-import os.path, time
+import os.path, time, sys, datetime
 from os import listdir
 from os.path import isfile, join
 
@@ -7,17 +7,14 @@ from package.func_list_files import getListOfFiles
 
 # on utilise ici Windows Security API
 # il faut bien installer au préalable pypiwin32
-import win32api
-import win32con
-import win32security
+import win32api, win32con, win32security
+
+sys.stdout = open("log.txt", "w")
 
 #le dossier qui sera trié
 mypath = 'directorytosort/'
-# on récupère chaque fichier dans ce dossier et on le stocke dans un tableau
-# fichiersdansdossier = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+# on récupère chaque fichier dans ce dossier et ses sous dossiers et on le stocke dans un tableau
 fichiersdansdossier = getListOfFiles(mypath)
-
-print (fichiersdansdossier)
 # on récupère le nombre de fichiers dans le dossier mypath
 nombredefichiers = len (fichiersdansdossier)
 # on initialise la variable d'indentation à 0
@@ -26,7 +23,9 @@ i = 0
 timenow = time.time()
 #nombre de secondes dans 2 semaines
 twoweeksago = timenow - 60*60*24*14
-
+#on écrit l'heure actuelle pour le fichier log
+now = datetime.datetime.now()
+print (now.strftime("%Y-%m-%d %H:%M"))
 # vérifier que la liste n'est pas vide
 if not nombredefichiers:
 	print ("Il n'y a pas de fichiers à trier.")

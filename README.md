@@ -8,7 +8,7 @@ Script en Python qui réorganise les fichiers dans un dossier et ses sous-dossie
 Mise en place : pour utiliser le script, le mettre à la racine du dossier à trier. Ensuite il faut renommer "directorytosort" par le nom de votre dossier pour la variable "mypath" dans le fichier script.py.
 Ouvrez ensuite votre console et executer le script --> si des fichiers sont vieux, cela créera (si il n'existe pas déjà) le dossier "archives" puis un dossier du nom du créateur, ensuite le script va déplacer ces fichiers dans ce dossier.
 
-Pour le moment le script écrit des informations dans la console directement mais le but va être de tout rediriger vers un fichier .log
+Le script écrit toutes les informations dans le fichier log.txt directement. Par contre cela écrase ce qui était écrit précédemment.
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -22,4 +22,4 @@ Script in Python that reorganizes files in a folder or in subfolders (if they ex
 Then open your console and run the script -> if files are old, it will create (if it does not already exist) the folder "archives" then a folder of the name of the creator, then the script will move these files in this folder.
 
 
- At the moment the script only writes information to the console directly but the goal is to redirect everything to a .log file
+This script writes all the information of prints directly in log.txt. However if there is anything already written then it writes over it.
