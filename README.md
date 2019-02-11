@@ -1,24 +1,25 @@
 # Script-Python-auto-reorganize
-<<<<<<< HEAD
 
-Français
-Script en Python qui réorganise un dossier selon la date de création des fichiers : si un fichier est vieux de plus de 2 semaines, le déplace dans un sous-dossier du nom du créateur.
+FranÃ§ais
+=======
 
-Mise en place : pour utiliser le script, le mettre à la racine du dossier à trier. Ensuite il faut renommer "directorytosort" par le nom de votre dossier pour la variable "mypath" dans le fichier script.py.
-Ouvrez ensuite votre console et executer le script --> si des fichiers sont vieux, cela créera (si il n'existe pas déjà) le dossier "archives" puis un dossier du nom du créateur, ensuite le script va déplacer ces fichiers dans ce dossier.
+Script en Python qui rÃ©organise un dossier selon la date de crÃ©ation des fichiers : si un fichier est vieux de plus de 2 semaines, le dÃ©place dans un sous-dossier du nom du crÃ©ateur.
 
-Pour le moment le script écrit des informations dans la console directement mais le but va être de tout rediriger vers un fichier .log
+Mise en place : pour utiliser le script, le mettre Ã  la racine du dossier Ã  trier. Ensuite il faut renommer "directorytosort" par le nom de votre dossier pour la variable "mypath" dans le fichier script.py.
+Ouvrez ensuite votre console et executer le script --> si des fichiers sont vieux, cela crÃ©era (si il n'existe pas dÃ©jÃ ) le dossier "archives" puis un dossier du nom du crÃ©ateur, ensuite le script va dÃ©placer ces fichiers dans ce dossier.
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Pour le moment le script Ã©crit des informations dans la console directement mais le but va Ãªtre de tout rediriger vers un fichier .log
+
+-------------------------------------------------------------------------------------------------------------------------------------------
 
 English
 =======
-Script en Python qui rÃ©organise un dossier selon la date de crÃ©ation des fichiers : si un fichier est vieux de plus de 2 semaines, le dÃ©place dans un sous-dossier du nom du crÃ©ateur.
 
->>>>>>> 7fea5721c7227fc02527095558ff6213d1bfd336
 Script in Python that reorganizes a folder depending on creation time : if it's older than 2 weeks, move it to archives/"creatorusername"
 
-Set up: to use the script, put it at the root of the folder to sort. Then you must rename "directorytosort" by the name of your folder for the "mypath" variable in the script.py file.
+
+ Set up: to use the script, put it at the root of the folder to sort. Then you must rename "directorytosort" by the name of your folder for the "mypath" variable in the script.py file.
 Then open your console and run the script -> if files are old, it will create (if it does not already exist) the folder "archives" then a folder of the name of the creator, then the script will move these files in this folder.
 
-At the moment the script only writes information to the console directly but the goal is to redirect everything to a .log file
+
+ At the moment the script only writes information to the console directly but the goal is to redirect everything to a .log file
