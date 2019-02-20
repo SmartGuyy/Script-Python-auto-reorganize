@@ -2,6 +2,9 @@ import os.path, time, sys, datetime
 from os import listdir
 from os.path import isfile, join
 
+#pour créer la liste si elle n'existe pas déjà
+from collections import defaultdict
+
 from package.func_move_file import movefile
 from package.func_list_files import getListOfFiles
 
@@ -9,6 +12,10 @@ from package.func_list_files import getListOfFiles
 # il faut bien installer au préalable pypiwin32
 import win32api, win32con, win32security
 
+#initialisation d'une nouvelle liste (pour avoir la taille totale qu'utilise un utilisateur)
+a = defaultdict(list)
+
+#date d'aujourd'hui 
 now = datetime.datetime.now()
 date = now.strftime("%Y-%m-%d")
 
@@ -32,6 +39,8 @@ timeNow = time.time()
 twoWeeksAgo = timeNow - 60*60*24*14
 #on écrit l'heure actuelle pour le fichier log
 print (date)
+#on créer une liste vide pour rentrer les noms d'utilisateurs un à un
+list = []
 
 # vérifier que la liste n'est pas vide
 if not nombreDeFichiers:
@@ -44,12 +53,13 @@ if not nombreDeFichiers:
 while i < nombreDeFichiers:
 	
 	# on récupère les informations sur le fichier
+	statinfo = os.stat(fichiersDansDossier[i])
 	sd = win32security.GetFileSecurity (fichiersDansDossier[i], win32security.OWNER_SECURITY_INFORMATION)
 	owner_sid = sd.GetSecurityDescriptorOwner ()
 	
 	# on récupère les valeurs de nom d'utilisateur et de domaine du fichier
 	name, domain, type = win32security.LookupAccountSid (None, owner_sid)
-
+	list.append(name)
 	# secondes passées depuis la création du fichier
 	fileCreationTime = os.path.getctime(fichiersDansDossier[i])
 
@@ -67,9 +77,23 @@ while i < nombreDeFichiers:
 		print ("Le fichier est vieux de plus de 2 semaines, il a donc été déplacé vers le dossier d'archivage de son créateur.")
 		
 		# ATTENTION : le dossier de destination DOIT être créer avant de lancer le script pour chaque utilisateur.
-		movefile(fichiersDansDossier[i], "archives\\"+name)
+		# movefile(fichiersDansDossier[i], "archives\\"+name)
 
 	else :
 		print ("Le fichier est récent et sera archivé dans " + str(daysBeforeExpiration) + " heures.")
 	
+	if name in list :
+		# a[name].append(statinfo.st_size)
+		# si la variable stockant la taille des fichiers d'un utilisateur n'existe pas, l'initialise à la valeur (poids du fichier) 
+		try:
+		#	name+'variable'
+			
+		except NameError:
+		#	name+'variable' = statinfo.st_size
+		#	print (name+'variable')
+		except :
+		#	name+'variable' + statinfo.st_size
+		#	print (name+'variable')
+
 	i += 1
+print (nom2)
