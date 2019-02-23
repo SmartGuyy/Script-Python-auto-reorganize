@@ -7,7 +7,7 @@ from collections import defaultdict
 
 from package.func_move_file import movefile
 from package.func_list_files import getListOfFiles
-
+from package.func_remove_value_from_list import remove_values_from_list
 # on utilise ici Windows Security API
 # il faut bien installer au préalable pypiwin32
 import win32api, win32con, win32security
@@ -41,19 +41,24 @@ twoWeeksAgo = timeNow - 60*60*24*14
 print (date)
 #on créer une liste vide pour rentrer les noms d'utilisateurs un à un
 list = []
-#on initialise la variable qui comptera l'espace utilisé par l'utilisateur dans le dossier et sous dossiers
+#on initialise la variable qui comptera l'espace utilisé par l'utilisateur dans le dossier et sous dossiers 
+#puis on créer une liste pour stocker dans l'ordre l'espace utilisé total par utilsateur
 sizeUsed = 0
+sizeUsedPerUser = []
 # vérifier que la liste n'est pas vide
 if not nombreDeFichiers:
 	print ("Il n'y a pas de fichiers à trier.")
 	# On met le programme en pause pour éviter qu'il ne se referme (Windows)
 	os.system("pause")
 
+#on récupère le nombre de fichiers dans une nouvelle variable pour pouvoir prévoir la dernière itération de la boucle
+nombreDeFichiersRestants = len (fichiersDansDossier)
+
 # tant que l'incrémentation est inférieure au nombre de fichiers,
 # récupère et trie les fichiers un par un
-
 while i < nombreDeFichiers:
-	
+
+
 	# on récupère les informations sur le fichier
 	statInfo = os.stat(fichiersDansDossier[i])
 	sd = win32security.GetFileSecurity (fichiersDansDossier[i], win32security.OWNER_SECURITY_INFORMATION)
@@ -86,9 +91,10 @@ while i < nombreDeFichiers:
 	
 	# on ajoute le nom d'utilisateur dans notre liste si il n'existe pas déjà
 	# on récupère la taille du fichier, si le nom existe déjà alors sizeUsed est incrémenté de la taille du nouveau fichier
-	# ! trouver une solution pour que chaque user ait son sizeUsed...
+	# ! trouver une solution pour conserver uniquement le dernier sizeused d'un utilisateur
 
 	if name not in list:
+		sizeUsedPerUser.append(sizeUsed)
 		list.append(name)
 		sizeUsed = statInfo.st_size
 		print (sizeUsed)
@@ -97,7 +103,21 @@ while i < nombreDeFichiers:
 		sizeUsed += statInfo.st_size
 		print (sizeUsed)
 	
-	statInfo = 0
+	#lorsque la boucle est terminée, met dans la liste la dernière saisie enregistrée
+	if nombreDeFichiersRestants == 1:
+		sizeUsedPerUser.append(sizeUsed)
+		
 	i += 1
+	nombreDeFichiersRestants -= 1
 
-print ("L'utilisateur " + name + " utilise " + str(sizeUsed) + " octets sur ce serveur de fichier.")
+
+#il faut bien enlever la première valeur de la liste (étant un 0 inutile)
+sizeUsedPerUser = remove_values_from_list(sizeUsedPerUser, 0)
+#on récupère la longueur de la liste
+usersInList = len(list) - 1
+
+# note : Python commence l'indexage à 0 et non pas à 1, donc il faut commencer par enlever 1 au compte de la liste
+while usersInList != -1:
+	print ("\n") # on ajoute une ligne vide pour espacer le tout
+	print ("L'utilisateur " + list[usersInList] + " utilise " + str(sizeUsedPerUser[usersInList]) + " octets sur ce serveur de fichier.")
+	usersInList -= 1

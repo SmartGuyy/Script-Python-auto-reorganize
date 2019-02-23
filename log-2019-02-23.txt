@@ -1,0 +1,97 @@
+2019-02-23
+
+
+Fichier suivant :
+directorytosort/log-2019-02-14.txt
+Dernière modification le: Thu Feb 14 17:48:25 2019
+Créé le: Thu Feb 21 01:18:21 2019
+Le propriétaire du fichier est DESKTOP-J85DKKR\Franz
+Le fichier est récent et sera archivé dans 285 heures.
+2298
+
+
+Fichier suivant :
+directorytosort/log-2019-02-20.txt
+Dernière modification le: Wed Feb 20 23:50:17 2019
+Créé le: Thu Feb 21 01:18:21 2019
+Le propriétaire du fichier est DESKTOP-J85DKKR\Franz
+Le fichier est récent et sera archivé dans 285 heures.
+5044
+
+
+Fichier suivant :
+directorytosort/log-2019-02-21.txt
+Dernière modification le: Thu Feb 21 01:20:03 2019
+Créé le: Thu Feb 21 01:31:47 2019
+Le propriétaire du fichier est DESKTOP-J85DKKR\Franz
+Le fichier est récent et sera archivé dans 285 heures.
+6507
+
+
+Fichier suivant :
+directorytosort/qsfq - Copie.txt
+Dernière modification le: Thu Feb 21 01:50:31 2019
+Créé le: Thu Feb 21 01:50:26 2019
+Le propriétaire du fichier est DESKTOP-J85DKKR\Franz
+Le fichier est récent et sera archivé dans 285 heures.
+26863
+
+
+Fichier suivant :
+directorytosort/qsfq.txt
+Dernière modification le: Thu Feb 21 01:50:19 2019
+Créé le: Thu Feb 21 01:49:58 2019
+Le propriétaire du fichier est DESKTOP-J85DKKR\Franz
+Le fichier est récent et sera archivé dans 285 heures.
+30734
+
+
+Fichier suivant :
+directorytosort/test empty folder\dfhfssd - Copie.txt
+Dernière modification le: Wed Feb  6 23:34:42 2019
+Créé le: Thu Feb 21 01:32:15 2019
+Le propriétaire du fichier est DESKTOP-J85DKKR\Franz
+Le fichier est récent et sera archivé dans 285 heures.
+30740
+
+
+Fichier suivant :
+directorytosort/test empty folder\test sub directory.txt
+Dernière modification le: Mon Feb 11 23:38:33 2019
+Créé le: Mon Feb 11 23:36:00 2019
+Le propriétaire du fichier est DESKTOP-J85DKKR\Franz
+Le fichier est récent et sera archivé dans 67 heures.
+30746
+
+
+Fichier suivant :
+directorytosort/test empty folder\zar.txt
+Dernière modification le: Wed Feb  6 23:34:42 2019
+Créé le: Thu Feb 21 01:32:15 2019
+Le propriétaire du fichier est DESKTOP-J85DKKR\Franz
+Le fichier est récent et sera archivé dans 285 heures.
+30752
+
+
+Fichier suivant :
+directorytosort/test-manual.pdf
+Dernière modification le: Wed Feb 20 17:08:30 2019
+Créé le: Thu Feb 21 02:14:34 2019
+Le propriétaire du fichier est DESKTOP-J85DKKR\Franz
+Le fichier est récent et sera archivé dans 286 heures.
+14267828
+
+
+Fichier suivant :
+directorytosort/test_file_from_another_user.txt
+Dernière modification le: Sat Feb 23 02:42:14 2019
+Créé le: Sat Feb 23 02:41:41 2019
+Le propriétaire du fichier est DESKTOP-J85DKKR\TestUser
+Le fichier est récent et sera archivé dans 334 heures.
+368
+
+
+L'utilisateur TestUser utilise 368 octets sur ce serveur de fichier.
+
+
+L'utilisateur Franz utilise 14267828 octets sur ce serveur de fichier.
