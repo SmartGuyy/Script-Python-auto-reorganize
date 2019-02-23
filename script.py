@@ -116,7 +116,7 @@ sizeUsedPerUser = remove_values_from_list(sizeUsedPerUser, 0)
 #on récupère la longueur de la liste
 usersInList = len(list) - 1
 
-# note : Python commence l'indexage à 0 et non pas à 1, donc il faut commencer par enlever 1 au compte de la liste
+# note : Python commence l'indexage de la liste à 0 et non pas à 1, donc il faut commencer par enlever 1 au compte de la liste
 while usersInList != -1:
 	print ("\n") # on ajoute une ligne vide pour espacer le tout
 	print ("L'utilisateur " + list[usersInList] + " utilise " + str(sizeUsedPerUser[usersInList]) + " octets sur ce serveur de fichier.")
