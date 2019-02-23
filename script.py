@@ -41,7 +41,8 @@ twoWeeksAgo = timeNow - 60*60*24*14
 print (date)
 #on créer une liste vide pour rentrer les noms d'utilisateurs un à un
 list = []
-
+#on initialise la variable qui comptera l'espace utilisé par l'utilisateur dans le dossier et sous dossiers
+sizeUsed = 0
 # vérifier que la liste n'est pas vide
 if not nombreDeFichiers:
 	print ("Il n'y a pas de fichiers à trier.")
@@ -50,16 +51,16 @@ if not nombreDeFichiers:
 
 # tant que l'incrémentation est inférieure au nombre de fichiers,
 # récupère et trie les fichiers un par un
+
 while i < nombreDeFichiers:
 	
 	# on récupère les informations sur le fichier
-	statinfo = os.stat(fichiersDansDossier[i])
+	statInfo = os.stat(fichiersDansDossier[i])
 	sd = win32security.GetFileSecurity (fichiersDansDossier[i], win32security.OWNER_SECURITY_INFORMATION)
 	owner_sid = sd.GetSecurityDescriptorOwner ()
 	
 	# on récupère les valeurs de nom d'utilisateur et de domaine du fichier
 	name, domain, type = win32security.LookupAccountSid (None, owner_sid)
-	list.append(name)
 	# secondes passées depuis la création du fichier
 	fileCreationTime = os.path.getctime(fichiersDansDossier[i])
 
@@ -76,24 +77,27 @@ while i < nombreDeFichiers:
 	if fileCreationTime < twoWeeksAgo :
 		print ("Le fichier est vieux de plus de 2 semaines, il a donc été déplacé vers le dossier d'archivage de son créateur.")
 		
-		# ATTENTION : le dossier de destination DOIT être créer avant de lancer le script pour chaque utilisateur.
-		# movefile(fichiersDansDossier[i], "archives\\"+name)
+		# on appelle notre fonction movefile de notre fichier func_move_file
+		movefile(fichiersDansDossier[i], "archives\\"+name)
 
 	else :
+		
 		print ("Le fichier est récent et sera archivé dans " + str(daysBeforeExpiration) + " heures.")
 	
-	if name in list :
-		# a[name].append(statinfo.st_size)
-		# si la variable stockant la taille des fichiers d'un utilisateur n'existe pas, l'initialise à la valeur (poids du fichier) 
-		try:
-		#	name+'variable'
-			
-		except NameError:
-		#	name+'variable' = statinfo.st_size
-		#	print (name+'variable')
-		except :
-		#	name+'variable' + statinfo.st_size
-		#	print (name+'variable')
+	# on ajoute le nom d'utilisateur dans notre liste si il n'existe pas déjà
+	# on récupère la taille du fichier, si le nom existe déjà alors sizeUsed est incrémenté de la taille du nouveau fichier
+	# ! trouver une solution pour que chaque user ait son sizeUsed...
 
+	if name not in list:
+		list.append(name)
+		sizeUsed = statInfo.st_size
+		print (sizeUsed)
+
+	else:
+		sizeUsed += statInfo.st_size
+		print (sizeUsed)
+	
+	statInfo = 0
 	i += 1
-print (nom2)
+
+print ("L'utilisateur " + name + " utilise " + str(sizeUsed) + " octets sur ce serveur de fichier.")

@@ -4,7 +4,7 @@ import shutil, os, glob
 from os import listdir
 from os.path import isfile, join
 
-def movefile(mypath, filetomove, destination):
+def movefile(filetomove, destination):
 	
 	# si le dossier de destination n'existe pas, le créer
 	if os.path.isdir(destination) == False: os.makedirs(destination);
