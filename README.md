@@ -10,6 +10,9 @@ Ouvrez ensuite votre console et executer le script --> si des fichiers sont vieu
 
 Le script écrit toutes les informations dans le fichier log.txt directement. Par contre cela écrase ce qui était écrit précédemment le jour même sauf si vous rajoutez d'autres indications de temps dans l'écriture du log.
 
+Si l'utilisateur dépasse 1 Giga, une alerte Windows apparait et un email est envoyé. Si vous utilisez ce code, pensez bien à changer les identifiants email et informations SMTP dans func_send_email.py, à changer votre message dans message.txt, le destinataire et son adresse dans contacts.txt.
+Si vous utilisez un serveur SMTP gratuit, pensez bien à activer l'accès IMAP.
+
 -------------------------------------------------------------------------------------------------------------------------------------------
 
 English
@@ -23,3 +26,6 @@ Then open your console and run the script -> if files are old, it will create (i
 
 
 This script writes all the information of prints directly in log.txt. However if you run it 2 times a day or more : anything already written will be destroyed except if you add other time indication in the code for log creation.
+
+If the user exceeds 1 Giga, a Windows alert appears and an email is sent. If you use this code, remember to change the email and SMTP credentials in func_send_email.py, to change your message in message.txt, the recipient and their address in contacts.txt.
+If you use a free SMTP server, remember to enable IMAP access.

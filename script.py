@@ -1,14 +1,20 @@
+# pour récupérer le temps et les informations sur les fichiers
 import os.path, time, sys, datetime
 from os import listdir
 from os.path import isfile, join
 
+# pour créer une alert box
+import ctypes   
 
-#pour créer la liste si elle n'existe pas déjà
+# pour créer la liste si elle n'existe pas déjà
 from collections import defaultdict
 
+# on importe nos fonctions maison
 from package.func_move_file import movefile
 from package.func_list_files import getListOfFiles
 from package.func_remove_value_from_list import remove_values_from_list
+from package.func_send_email import sendMail
+
 # on utilise ici Windows Security API
 # il faut bien installer au préalable pypiwin32
 import win32api, win32con, win32security
@@ -16,7 +22,7 @@ import win32api, win32con, win32security
 #initialisation d'une nouvelle liste (pour avoir la taille totale qu'utilise un utilisateur)
 a = defaultdict(list)
 
-#date d'aujourd'hui 
+# date d'aujourd'hui 
 now = datetime.datetime.now()
 date = now.strftime("%Y-%m-%d")
 
@@ -27,7 +33,7 @@ try:
 except IOError:
 	print ("Erreur: impossible de trouver le fichier ou les données.")
 
-#le dossier qui sera trié
+# le dossier qui sera trié
 myPath = 'directorytosort/'
 # on récupère chaque fichier dans ce dossier et ses sous dossiers et on le stocke dans un tableau
 fichiersDansDossier = getListOfFiles(myPath)
@@ -35,17 +41,17 @@ fichiersDansDossier = getListOfFiles(myPath)
 nombreDeFichiers = len (fichiersDansDossier)
 
 
-#on récupère l'heure actuelle
+# on récupère l'heure actuelle
 timeNow = time.time()
-#nombre de secondes dans 2 semaines
+# nombre de secondes dans 2 semaines
 twoWeeksAgo = timeNow - 60*60*24*14
-#on écrit l'heure actuelle pour le fichier log
+# on écrit l'heure actuelle pour le fichier log
 print (date)
 
-#on créer une liste vide pour rentrer les noms d'utilisateurs un à un
+# on créer une liste vide pour rentrer les noms d'utilisateurs un à un
 list = []
-#on initialise la variable qui comptera l'espace utilisé par l'utilisateur dans le dossier et sous dossiers 
-#puis on créer une liste pour stocker dans l'ordre l'espace utilisé total par utilsateur
+# on initialise la variable qui comptera l'espace utilisé par l'utilisateur dans le dossier et sous dossiers 
+# puis on créer une liste pour stocker dans l'ordre l'espace utilisé total par utilsateur
 sizeUsed = 0
 sizeUsedPerUser = {}
 
@@ -109,37 +115,18 @@ while i < nombreDeFichiers:
 		if names == name:
 			sizeUsedPerUser[name] += sizeUsed
 			
-	#on incrémente la boucle pour passer au fichier suivant
+	# on incrémente la boucle pour passer au fichier suivant
 	i += 1
 
-#fin de boucle --> résultat final par utilisateur
+# fin de boucle --> résultat final par utilisateur
 
-#pour chaque clé dans le dictionnaire sizeUsedPerUser, écrit le nom et sa valeur.
+# pour chaque clé dans le dictionnaire sizeUsedPerUser, écrit le nom et sa valeur.
 for key in sizeUsedPerUser:
 	print ("\n") # on ajoute une ligne vide pour espacer le tout
 	print ("L'utilisateur " + key + " utilise " + str(int(sizeUsedPerUser[key]/1024)) + " Ko ou " + str(int(sizeUsedPerUser[key]/1048576)) + " Mo.")
 
+	if (sizeUsedPerUser[key]/1048576) > 1000: #supérieur à 1000 Mo 
+		print ("Alerte : l'utilisateur " + key + " utilise plus d'1 Giga de stockage sur le dossier entier.")
+		ctypes.windll.user32.MessageBoxW(0, "Alerte : l'utilisateur " + key + " utilise plus d'1 Giga de stockage sur le dossier entier. Un email a été envoyé à l'administrateur", "Alerte stockage dossier partagé", 1)
+		sendMail()
 
-
-
-
-
-
-	#TO USE LATER MAYBE ? / A UTILISER PLUS TARD?
-
-	#il faut bien enlever la première valeur de la liste (étant un 0 inutile)
-	# sizeUsedPerUser = remove_values_from_list(sizeUsedPerUser, 0)
-
-	#lorsque la boucle est terminée, met dans la liste la dernière saisie enregistrée
-	#if filesRemaining == 1:
-	#	sizeUsedPerUser.append(sizeUsed)
-	# filesRemaining -= 1
-
-
-		#TEST NESTED LIST
-		#rows = [row for row in sizeUsedPerUser]
-		#for i, row in enumerate(rows): 
-		#	for j, value in enumerate(row):
-		#		if value == name: 
-					#sizeUsed[[i],[j]] += str(sizeUsed)
-		#			sizeUsed[i][j] += sizeUsed
