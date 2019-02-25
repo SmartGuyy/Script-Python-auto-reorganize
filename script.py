@@ -2,6 +2,7 @@ import os.path, time, sys, datetime
 from os import listdir
 from os.path import isfile, join
 
+
 #pour créer la liste si elle n'existe pas déjà
 from collections import defaultdict
 
@@ -19,6 +20,7 @@ a = defaultdict(list)
 now = datetime.datetime.now()
 date = now.strftime("%Y-%m-%d")
 
+# on récupère tout les print dans un fichier log avec la date d'aujourd'hui
 try:
 	sys.stdout = open("log-"+date+".txt", "w")
 
@@ -31,28 +33,31 @@ myPath = 'directorytosort/'
 fichiersDansDossier = getListOfFiles(myPath)
 # on récupère le nombre de fichiers dans le dossier mypath
 nombreDeFichiers = len (fichiersDansDossier)
-# on initialise la variable d'indentation à 0
-i = 0
+
+
 #on récupère l'heure actuelle
 timeNow = time.time()
 #nombre de secondes dans 2 semaines
 twoWeeksAgo = timeNow - 60*60*24*14
 #on écrit l'heure actuelle pour le fichier log
 print (date)
+
 #on créer une liste vide pour rentrer les noms d'utilisateurs un à un
 list = []
 #on initialise la variable qui comptera l'espace utilisé par l'utilisateur dans le dossier et sous dossiers 
 #puis on créer une liste pour stocker dans l'ordre l'espace utilisé total par utilsateur
 sizeUsed = 0
-sizeUsedPerUser = []
+sizeUsedPerUser = {}
+
 # vérifier que la liste n'est pas vide
 if not nombreDeFichiers:
 	print ("Il n'y a pas de fichiers à trier.")
 	# On met le programme en pause pour éviter qu'il ne se referme (Windows)
 	os.system("pause")
 
-#on récupère le nombre de fichiers dans une nouvelle variable pour pouvoir prévoir la dernière itération de la boucle
-nombreDeFichiersRestants = len (fichiersDansDossier)
+# on initialise la variable d'indentation de la boucle à 0
+i = -1
+
 
 # tant que l'incrémentation est inférieure au nombre de fichiers,
 # récupère et trie les fichiers un par un
@@ -88,36 +93,53 @@ while i < nombreDeFichiers:
 	else :
 		
 		print ("Le fichier est récent et sera archivé dans " + str(daysBeforeExpiration) + " heures.")
-	
+
 	# on ajoute le nom d'utilisateur dans notre liste si il n'existe pas déjà
 	# on récupère la taille du fichier, si le nom existe déjà alors sizeUsed est incrémenté de la taille du nouveau fichier
-	# ! trouver une solution pour conserver uniquement le dernier sizeused d'un utilisateur
-
 	if name not in list:
-		sizeUsedPerUser.append(sizeUsed)
 		list.append(name)
 		sizeUsed = statInfo.st_size
-		print (sizeUsed)
+		#sizeUsedPerUser[name] = str(sizeUsed)
+		sizeUsedPerUser.update({name:sizeUsed})
 
 	else:
-		sizeUsed += statInfo.st_size
-		print (sizeUsed)
+		sizeUsed = statInfo.st_size
 	
-	#lorsque la boucle est terminée, met dans la liste la dernière saisie enregistrée
-	if nombreDeFichiersRestants == 1:
-		sizeUsedPerUser.append(sizeUsed)
-		
+	for names, size in sizeUsedPerUser.items():
+		if names == name:
+			sizeUsedPerUser[name] += sizeUsed
+			
+	#on incrémente la boucle pour passer au fichier suivant
 	i += 1
-	nombreDeFichiersRestants -= 1
 
+#fin de boucle --> résultat final par utilisateur
 
-#il faut bien enlever la première valeur de la liste (étant un 0 inutile)
-sizeUsedPerUser = remove_values_from_list(sizeUsedPerUser, 0)
-#on récupère la longueur de la liste
-usersInList = len(list) - 1
-
-# note : Python commence l'indexage de la liste à 0 et non pas à 1, donc il faut commencer par enlever 1 au compte de la liste
-while usersInList != -1:
+#pour chaque clé dans le dictionnaire sizeUsedPerUser, écrit le nom et sa valeur.
+for key in sizeUsedPerUser:
 	print ("\n") # on ajoute une ligne vide pour espacer le tout
-	print ("L'utilisateur " + list[usersInList] + " utilise " + str(sizeUsedPerUser[usersInList]) + " octets sur ce serveur de fichier.")
-	usersInList -= 1
+	print ("L'utilisateur " + key + " utilise " + str(int(sizeUsedPerUser[key]/1024)) + " Ko ou " + str(int(sizeUsedPerUser[key]/1048576)) + " Mo.")
+
+
+
+
+
+
+
+	#TO USE LATER MAYBE ? / A UTILISER PLUS TARD?
+
+	#il faut bien enlever la première valeur de la liste (étant un 0 inutile)
+	# sizeUsedPerUser = remove_values_from_list(sizeUsedPerUser, 0)
+
+	#lorsque la boucle est terminée, met dans la liste la dernière saisie enregistrée
+	#if filesRemaining == 1:
+	#	sizeUsedPerUser.append(sizeUsed)
+	# filesRemaining -= 1
+
+
+		#TEST NESTED LIST
+		#rows = [row for row in sizeUsedPerUser]
+		#for i, row in enumerate(rows): 
+		#	for j, value in enumerate(row):
+		#		if value == name: 
+					#sizeUsed[[i],[j]] += str(sizeUsed)
+		#			sizeUsed[i][j] += sizeUsed
