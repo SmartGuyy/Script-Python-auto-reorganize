@@ -111,22 +111,25 @@ while i < nombreDeFichiers:
 	else:
 		sizeUsed = statInfo.st_size
 	
-	for names, size in sizeUsedPerUser.items():
-		if names == name:
-			sizeUsedPerUser[name] += sizeUsed
+		for names, size in sizeUsedPerUser.items():
+			if names == name:
+				sizeUsedPerUser[name] += sizeUsed
 			
 	# on incrémente la boucle pour passer au fichier suivant
 	i += 1
+	print (sizeUsed)
 
 # fin de boucle --> résultat final par utilisateur
 
 # pour chaque clé dans le dictionnaire sizeUsedPerUser, écrit le nom et sa valeur.
 for key in sizeUsedPerUser:
 	print ("\n") # on ajoute une ligne vide pour espacer le tout
-	print ("L'utilisateur " + key + " utilise " + str(int(sizeUsedPerUser[key]/1024)) + " Ko ou " + str(int(sizeUsedPerUser[key]/1048576)) + " Mo.")
+	print ("L'utilisateur " + key + " utilise " + str(int(sizeUsedPerUser[key]/1000)) + " Ko ou " + str(int(sizeUsedPerUser[key]/1000000)) + " Mo.")
 
-	if (sizeUsedPerUser[key]/1048576) > 1000: #supérieur à 1000 Mo 
+	if (sizeUsedPerUser[key]/1000000000) > 1: #supérieur à 1 Go 
 		print ("Alerte : l'utilisateur " + key + " utilise plus d'1 Giga de stockage sur le dossier entier.")
-		ctypes.windll.user32.MessageBoxW(0, "Alerte : l'utilisateur " + key + " utilise plus d'1 Giga de stockage sur le dossier entier. Un email a été envoyé à l'administrateur", "Alerte stockage dossier partagé", 1)
-		sendMail()
+		ctypes.windll.user32.MessageBoxW(0, "Alerte : l'utilisateur " + key + " utilise plus d'1 Giga de stockage sur le dossier entier. Un email a été envoyé à l'administrateur.", "Alerte stockage dossier partagé", 1)
+		#sendMail()
+	else: 
+		print ("Tout va bien.")
 

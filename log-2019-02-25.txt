@@ -7,6 +7,7 @@ Dernière modification le: Sat Feb 23 13:35:53 2019
 Créé le: Sat Feb 23 13:35:38 2019
 Le propriétaire du fichier est DESKTOP-J85DKKR\TestUser
 Le fichier est récent et sera archivé dans 279 heures.
+9287
 
 
 Fichier suivant :
@@ -14,7 +15,8 @@ directorytosort/417.71-desktop-win10-64bit-international-whql - Copie.exe
 Dernière modification le: Sat Feb  9 22:58:40 2019
 Créé le: Mon Feb 25 21:05:38 2019
 Le propriétaire du fichier est DESKTOP-J85DKKR\Franz
-Le fichier est récent et sera archivé dans 335 heures.
+Le fichier est récent et sera archivé dans 334 heures.
+571505016
 
 
 Fichier suivant :
@@ -23,6 +25,7 @@ Dernière modification le: Sat Feb 23 13:35:53 2019
 Créé le: Sat Feb 23 13:36:04 2019
 Le propriétaire du fichier est DESKTOP-J85DKKR\TestUser
 Le fichier est récent et sera archivé dans 279 heures.
+9287
 
 
 Fichier suivant :
@@ -30,7 +33,8 @@ directorytosort/log-2019-02-14.txt
 Dernière modification le: Thu Feb 14 17:48:25 2019
 Créé le: Thu Feb 21 01:18:21 2019
 Le propriétaire du fichier est DESKTOP-J85DKKR\Franz
-Le fichier est récent et sera archivé dans 219 heures.
+Le fichier est récent et sera archivé dans 218 heures.
+2298
 
 
 Fichier suivant :
@@ -38,7 +42,8 @@ directorytosort/qsfq - Copie.txt
 Dernière modification le: Thu Feb 21 01:50:31 2019
 Créé le: Thu Feb 21 01:50:26 2019
 Le propriétaire du fichier est DESKTOP-J85DKKR\Franz
-Le fichier est récent et sera archivé dans 220 heures.
+Le fichier est récent et sera archivé dans 219 heures.
+20356
 
 
 Fichier suivant :
@@ -46,7 +51,8 @@ directorytosort/qsfq.txt
 Dernière modification le: Thu Feb 21 01:50:19 2019
 Créé le: Thu Feb 21 01:49:58 2019
 Le propriétaire du fichier est DESKTOP-J85DKKR\Franz
-Le fichier est récent et sera archivé dans 220 heures.
+Le fichier est récent et sera archivé dans 219 heures.
+3871
 
 
 Fichier suivant :
@@ -55,6 +61,7 @@ Dernière modification le: Wed Feb  6 23:34:42 2019
 Créé le: Thu Feb 21 01:32:15 2019
 Le propriétaire du fichier est DESKTOP-J85DKKR\Franz
 Le fichier est récent et sera archivé dans 219 heures.
+6
 
 
 Fichier suivant :
@@ -63,6 +70,7 @@ Dernière modification le: Mon Feb 11 23:38:33 2019
 Créé le: Mon Feb 11 23:36:00 2019
 Le propriétaire du fichier est DESKTOP-J85DKKR\Franz
 Le fichier est récent et sera archivé dans 1 heures.
+6
 
 
 Fichier suivant :
@@ -71,6 +79,7 @@ Dernière modification le: Wed Feb  6 23:34:42 2019
 Créé le: Thu Feb 21 01:32:15 2019
 Le propriétaire du fichier est DESKTOP-J85DKKR\Franz
 Le fichier est récent et sera archivé dans 219 heures.
+6
 
 
 Fichier suivant :
@@ -78,7 +87,8 @@ directorytosort/test-manual.pdf
 Dernière modification le: Wed Feb 20 17:08:30 2019
 Créé le: Thu Feb 21 02:14:34 2019
 Le propriétaire du fichier est DESKTOP-J85DKKR\Franz
-Le fichier est récent et sera archivé dans 220 heures.
+Le fichier est récent et sera archivé dans 219 heures.
+14237076
 
 
 Fichier suivant :
@@ -87,6 +97,7 @@ Dernière modification le: Sat Feb 23 02:42:14 2019
 Créé le: Sat Feb 23 02:41:41 2019
 Le propriétaire du fichier est DESKTOP-J85DKKR\TestUser
 Le fichier est récent et sera archivé dans 268 heures.
+368
 
 
 Fichier suivant :
@@ -95,6 +106,7 @@ Dernière modification le: Sat Feb 23 13:34:49 2019
 Créé le: Sat Feb 23 13:34:43 2019
 Le propriétaire du fichier est DESKTOP-J85DKKR\Franz
 Le fichier est récent et sera archivé dans 279 heures.
+5
 
 
 Fichier suivant :
@@ -103,10 +115,12 @@ Dernière modification le: Sat Feb 23 13:35:53 2019
 Créé le: Sat Feb 23 13:35:38 2019
 Le propriétaire du fichier est DESKTOP-J85DKKR\TestUser
 Le fichier est récent et sera archivé dans 279 heures.
+9287
 
 
-L'utilisateur TestUser utilise 36 Ko ou 0 Mo.
+L'utilisateur TestUser utilise 28 Ko ou 0 Mo.
+Tout va bien.
 
 
-L'utilisateur Franz utilise 1130150 Ko ou 1103 Mo.
-Alerte : l'utilisateur Franz utilise plus d'1 Giga de stockage sur le dossier entier.
+L'utilisateur Franz utilise 585768 Ko ou 585 Mo.
+Tout va bien.
