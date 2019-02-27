@@ -18,7 +18,9 @@ Si vous utilisez un serveur SMTP gratuit, pensez bien à activer l'accès IMAP.
 ## Usage:
 
 Tout d'abord, téléchargez l'ensemble du dossier avec ce lien: https://github.com/SmartGuyy/Script-Python-auto-reorganize/archive/master.zip
+
 Ensuite dézipper le à la racine du dossier que vous souhaitez contrôler avec le script.
+
 Note: vous devez être administrateur de votre machine et télécharger/installer Python à cette adresse : https://www.python.org/downloads/.
 
 Pour tester le script avec votre propre dossier, il faudra modifier la valeur de "mypath" dans script.py par le nom de votre dossier.
