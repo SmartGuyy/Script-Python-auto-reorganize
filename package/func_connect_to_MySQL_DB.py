@@ -3,7 +3,7 @@ import time
 from mysql.connector import Error
 
 host='localhost'
-databse='projet6'
+database='projet6'
 user='root'
 password='toor'
 
