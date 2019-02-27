@@ -2,10 +2,15 @@ import mysql.connector
 import time
 from mysql.connector import Error
 
+host='localhost'
+databse='projet6'
+user='root'
+password='toor'
+
 def insertToTableForUsers(warning,usersConcerned,sizeExceeded):
 
 	try:
-		connection = mysql.connector.connect(host='localhost', database='projet6', user='root', password='toor', use_pure=True)
+		connection = mysql.connector.connect(host=host, database=database, user=user, password=password, use_pure=True)
 		cursor = connection.cursor(prepared=True)
 		#on prépare notre requête en spécifiant des %s comme value, ce qui va nous permettre d'insérer nos variables peu après
 		sql_insert_query = """ INSERT INTO `datafromusers` (`warning`,`usersConcerned`,`sizeExceeded`) VALUES (%s,%s,%s)"""
@@ -30,7 +35,7 @@ def insertToTableForUsers(warning,usersConcerned,sizeExceeded):
 def insertToTableForSharedFolder(totalSizeUsed):
 
 	try:
-		connection = mysql.connector.connect(host='localhost', database='projet6', user='root', password='toor', use_pure=True)
+		connection = mysql.connector.connect(host=host, database=database, user=user, password=password, use_pure=True)
 		cursor = connection.cursor(prepared=True)
 		#on prépare notre requête en spécifiant des %s comme value, ce qui va nous permettre d'insérer nos variables peu après
 		sql_insert_query = """ INSERT INTO `sizesharedfolder` (`Size`) VALUES (%s)"""
