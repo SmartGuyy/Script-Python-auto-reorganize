@@ -14,7 +14,7 @@ from package.func_move_file import movefile
 from package.func_list_files import getListOfFiles
 from package.func_remove_value_from_list import remove_values_from_list
 from package.func_send_email import sendMail
-
+from package.func_connect_to_MySQL_DB import insertToTableForUsers, insertToTableForSharedFolder
 # on utilise ici Windows Security API
 # il faut bien installer au préalable pypiwin32
 import win32api, win32con, win32security
@@ -31,7 +31,7 @@ try:
 	sys.stdout = open("log-"+date+".txt", "w")
 
 except IOError:
-	print ("Erreur: impossible de trouver le fichier ou les données.")
+	print ("Erreur: impossible de créer le fichier log.")
 
 # le dossier qui sera trié
 myPath = 'directorytosort/'
@@ -63,6 +63,8 @@ if not nombreDeFichiers:
 
 # on initialise la variable d'indentation de la boucle à 0
 i = -1
+# on initialise le poids total du dossier
+totalSizeUsed = 0
 
 
 # tant que l'incrémentation est inférieure au nombre de fichiers,
@@ -117,7 +119,7 @@ while i < nombreDeFichiers:
 			
 	# on incrémente la boucle pour passer au fichier suivant
 	i += 1
-	print (sizeUsed)
+	print ("La taille du fichier est de "+str(sizeUsed/1000)+" Ko ou "+str(sizeUsed/1000000)+"Mo")
 
 # fin de boucle --> résultat final par utilisateur
 
@@ -125,11 +127,22 @@ while i < nombreDeFichiers:
 for key in sizeUsedPerUser:
 	print ("\n") # on ajoute une ligne vide pour espacer le tout
 	print ("L'utilisateur " + key + " utilise " + str(int(sizeUsedPerUser[key]/1000)) + " Ko ou " + str(int(sizeUsedPerUser[key]/1000000)) + " Mo.")
+	
+	#on récupère le poids total du dossier et on le convertit en Gigas
+	totalSizeUsed += float((sizeUsedPerUser[key]/1000000000))
 
 	if (sizeUsedPerUser[key]/1000000000) > 1: #supérieur à 1 Go 
 		print ("Alerte : l'utilisateur " + key + " utilise plus d'1 Giga de stockage sur le dossier entier.")
-		ctypes.windll.user32.MessageBoxW(0, "Alerte : l'utilisateur " + key + " utilise plus d'1 Giga de stockage sur le dossier entier. Un email a été envoyé à l'administrateur.", "Alerte stockage dossier partagé", 1)
 		#sendMail()
+		warning='YES'
+		sizeExceeded=(str((int(sizeUsedPerUser[key]/1000000))-1000)+" Mo")
+		#on laisse un peu de délai pour que la prochaine requête s'effectue correctement
+		#time.sleep(2)
+		#connexion à la base de données
+		insertToTableForUsers(warning,key,sizeExceeded)
 	else: 
 		print ("Tout va bien.")
-
+print ("\n") # on ajoute une ligne vide pour espacer le tout
+# "%.2f" % est la formule pour laisser seulement 2 décimales
+print ("Le poids total du dossier fait plus de %.2f" %  totalSizeUsed +" Go.")
+insertToTableForSharedFolder("%.2f" % totalSizeUsed +" Go")
