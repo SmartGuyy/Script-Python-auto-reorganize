@@ -27,7 +27,7 @@ def insertToTableForUsers(warning,usersConcerned,sizeExceeded):
 		print("Erreur de paramètres: {}".format(error))
 
 	finally:
-		# closing database connection.
+		# on ferme la connexion
 		if (connection.is_connected()):
 			cursor.close()
 			connection.close()
@@ -52,7 +52,7 @@ def insertToTableForSharedFolder(totalSizeUsed):
 		print("Erreur de paramètres: {}".format(error))
 
 	finally:
-		# closing database connection.
+		# on ferme la connexion
 		if (connection.is_connected()):
 			cursor.close()
 			connection.close()

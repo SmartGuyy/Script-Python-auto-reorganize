@@ -23,7 +23,7 @@ Ensuite dézipper le à la racine du dossier que vous souhaitez contrôler avec 
 
 Note: vous devez être administrateur de votre machine et télécharger/installer Python à cette adresse : https://www.python.org/downloads/.
 
-Pour tester le script avec votre propre dossier, il faudra modifier la valeur de "mypath" dans script.py par le nom de votre dossier.
+Pour tester le script avec votre propre dossier, il faudra modifier la valeur de "mypath" dans scriptFR.py par le nom de votre dossier.
 
 Pour la base de données vous devez créer:
 - une table "datafromusers" avec 5 valeurs: entryID qui doit être un INT auto incrementé, warning(VARCHAR 3), usersConcerned(VARCHAR 20), sizeExceeded(VARCHAR 30) and Date (TIMESTAMP CURRENT_TIMESTAMP)
@@ -35,7 +35,7 @@ Si vous voulez tester la fonction sendmail, il vous faudra remplacer "MY_ADDRESS
 
 Ensuite il faut également modifier le fichier "mycontacts.txt" par les destinataires du mail envoyé par le script ainsi que "message.txt" pour son contenu.
 
-Pour éxecuter le script, vous devez ouvrir un terminal: pour Windows, tapez CMD dans la barre de recherche puis naviguez avec la commande "cd" jusqu'au dossier où se trouve votre script.py. Ecrivez ensuite simplement python.py et vous devriez voir apparaitre un log dans le même dossier avec toutes les informations sur l'éxecution du script.
+Pour éxecuter le script, vous devez ouvrir un terminal: pour Windows, tapez CMD dans la barre de recherche puis naviguez avec la commande "cd" jusqu'au dossier où se trouve votre scriptFR.py. Ecrivez ensuite simplement scriptFR.py et vous devriez voir apparaitre un log dans le même dossier avec toutes les informations sur l'éxecution du script.
 
 ## License:
 Script-Python-auto-reorganize est sous license MIT.
@@ -51,7 +51,7 @@ English
 Script in Python that reorganizes files in a folder or in subfolders (if they exist) depending on creation time : if a file is older than 2 weeks, move it to archives/"creatorusername"
 
 
- Set up: to use the script, put it at the root of the folder to sort. Then you must rename "directorytosort" by the name of your folder for the "mypath" variable in the script.py file.
+ Set up: to use the script, put it at the root of the folder to sort. Then you must rename "directorytosort" by the name of your folder for the "mypath" variable in the scriptEN.py file.
 Then open your console and run the script -> if files are old, it will create (if it does not already exist) the folder "archives" then a folder of the name of the creator, then the script will move these files in this folder.
 
 
@@ -66,7 +66,7 @@ First, download the entire folder with this link: https://github.com/SmartGuyy/S
 Then unzip it to the root of the folder you want to control with the script.
 Note: You must be an administrator of your machine and download / install Python at this address: https://www.python.org/downloads/.
 
-To test the script with your own folder, you will need to change the value of "mypath" in script.py by the name of your folder.
+To test the script with your own folder, you will need to change the value of "mypath" in scriptEN.py by the name of your folder.
 
 For the database you must create:
 - one table "datafromusers" with 5 values: entryID which has to be an INT auto incremented, warning(VARCHAR 3), usersConcerned(VARCHAR 20), sizeExceeded(VARCHAR 30) and Date (TIMESTAMP CURRENT_TIMESTAMP)
@@ -78,7 +78,7 @@ If you want to test the sendmail function, you will need to replace "MY_ADDRESS"
 
 Then you must also modify the file "mycontacts.txt" by the recipients of the mail sent by the script as well as "message.txt" for its contents.
 
-To run the script, you must open a terminal: for Windows, type CMD in the search bar and then navigate with the "cd" command to the folder where your script.py is located. Then just write python.py and you should see a log in the same folder with all the information about running the script.
+To run the script, you must open a terminal: for Windows, type CMD in the search bar and then navigate with the "cd" command to the folder where your scriptEN.py is located. Then just write scriptEN.py and you should see a log in the same folder with all the information about running the script.
 
 ## Licensing:
 Script-Python-auto-reorganize is under MIT license.

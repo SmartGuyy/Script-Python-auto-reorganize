@@ -6,21 +6,15 @@ from os.path import isfile, join
 # pour créer une alert box
 import ctypes   
 
-# pour créer la liste si elle n'existe pas déjà
-from collections import defaultdict
-
 # on importe nos fonctions maison
-from package.func_move_file import movefile
-from package.func_list_files import getListOfFiles
-from package.func_remove_value_from_list import remove_values_from_list
-from package.func_send_email import sendMail
-from package.func_connect_to_MySQL_DB import insertToTableForUsers, insertToTableForSharedFolder
+from packageFR.func_move_file_FR import movefile
+from packageFR.func_list_files_FR import getListOfFiles
+from packageFR.func_remove_value_from_list_FR import remove_values_from_list
+from packageFR.func_send_email_FR import sendMail
+from packageFR.func_connect_to_MySQL_DB_FR import insertToTableForUsers, insertToTableForSharedFolder
 # on utilise ici Windows Security API
 # il faut bien installer au préalable pypiwin32
 import win32api, win32con, win32security
-
-#initialisation d'une nouvelle liste (pour avoir la taille totale qu'utilise un utilisateur)
-a = defaultdict(list)
 
 # date d'aujourd'hui 
 now = datetime.datetime.now()
@@ -49,9 +43,9 @@ twoWeeksAgo = timeNow - 60*60*24*14
 print (date)
 
 # on créer une liste vide pour rentrer les noms d'utilisateurs un à un
-list = []
+nameList = []
 # on initialise la variable qui comptera l'espace utilisé par l'utilisateur dans le dossier et sous dossiers 
-# puis on créer une liste pour stocker dans l'ordre l'espace utilisé total par utilsateur
+# puis on créer un dictionnaire pour stocker dans l'ordre l'espace utilisé total par utilsateur
 sizeUsed = 0
 sizeUsedPerUser = {}
 
@@ -104,10 +98,9 @@ while i < nombreDeFichiers:
 
 	# on ajoute le nom d'utilisateur dans notre liste si il n'existe pas déjà
 	# on récupère la taille du fichier, si le nom existe déjà alors sizeUsed est incrémenté de la taille du nouveau fichier
-	if name not in list:
-		list.append(name)
+	if name not in nameList:
+		nameList.append(name)
 		sizeUsed = statInfo.st_size
-		#sizeUsedPerUser[name] = str(sizeUsed)
 		sizeUsedPerUser.update({name:sizeUsed})
 
 	else:
@@ -136,8 +129,6 @@ for key in sizeUsedPerUser:
 		#sendMail()
 		warning='YES'
 		sizeExceeded=(str((int(sizeUsedPerUser[key]/1000000))-1000)+" Mo")
-		#on laisse un peu de délai pour que la prochaine requête s'effectue correctement
-		#time.sleep(2)
 		#connexion à la base de données
 		insertToTableForUsers(warning,key,sizeExceeded)
 	else: 

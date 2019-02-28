@@ -1,6 +1,6 @@
 # importation de la librairie shutil, ayant des fonctions 
 # pour copier, couper, renommer ou supprimer des fichiers
-import shutil, os, glob
+import shutil, os
 from os import listdir
 from os.path import isfile, join
 
