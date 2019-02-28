@@ -9,7 +9,6 @@ import ctypes
 # import our own functions
 from packageEN.func_move_file_EN import movefile
 from packageEN.func_list_files_EN import getListOfFiles
-from packageEN.func_remove_value_from_list_EN import remove_values_from_list
 from packageEN.func_send_email_EN import sendMail
 from packageEN.func_connect_to_MySQL_DB_EN import insertToTableForUsers, insertToTableForSharedFolder
 # here we use Windows Security API
