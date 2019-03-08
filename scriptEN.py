@@ -11,6 +11,7 @@ from packageEN.func_move_file_EN import movefile
 from packageEN.func_list_files_EN import getListOfFiles
 from packageEN.func_send_email_EN import sendMail
 from packageEN.func_connect_to_MySQL_DB_EN import insertToTableForUsers, insertToTableForSharedFolder
+from packageEN.func_modifiy_path_directorytosort_EN import getPathDirectoryToSort
 # here we use Windows Security API
 # MUST install pypiwin32 package before running script
 import win32api, win32con, win32security
@@ -27,7 +28,7 @@ except IOError:
 	print ("Error: can't create log file.")
 
 # directory (and subdirectories) to sort
-myPath = 'directorytosort/'
+myPath = getPathDirectoryToSort('pathdirectory.txt')
 # get all files and store it in a table
 filesInFolder = getListOfFiles(myPath)
 # get number of files in mypath

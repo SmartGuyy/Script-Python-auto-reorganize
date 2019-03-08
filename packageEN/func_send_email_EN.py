@@ -5,8 +5,24 @@ from string import Template
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-MY_ADDRESS = 'YOUREMAILHERE'
-PASSWORD = 'YOURPASSWORDHERE'
+def get_SMTP_informations
+
+	"""
+	Returns 4 values: MY_ADDRESS, PASSWORD, SMTP_ADDRESS and SMTP_PORT containing the identifiers and address for sending mail
+	read from filename
+	"""
+	try:
+
+		with open(filename, mode='r', encoding='utf-8') as SMTP_file:
+			for parameter in SMTP_file:
+				MY_ADDRESS = parameter.split()[0]
+				PASSWORD = parameter.split()[1]
+				SMTP_ADDRESS = parameter.split()[2]
+				SMTP_PORT = parameter.split()[3]
+		return MY_ADDRESS, PASSWORD, SMTP_ADDRESS, SMTP_PORT
+
+	except IOError:
+		print ("Error: cannot get in SMTPinformations.txt.")
 
 def get_contacts(filename):
 	"""
@@ -40,13 +56,14 @@ def read_template(filename):
 def sendMail():
 
 	try:
-
+		# get informations from txt files to send email
+		MY_ADDRESS, PASSWORD, SMTP_ADDRESS, SMTP_PORT = get_SMTP_informations('SMTPinformations.txt') # read SMTP informations
 		names, emails = get_contacts('mycontacts.txt') # read contacts
 		message_template = read_template('message.txt')
 
 		# set up the SMTP server
 		context = ssl.create_default_context()
-		s = smtplib.SMTP_SSL(host='smtp.gmail.com', port='465', context=context)
+		s = smtplib.SMTP_SSL(host=SMTP_ADDRESS, port=SMTP_PORT, context=context)
 	   # s.starttls()
 		s.login(MY_ADDRESS, PASSWORD)
 

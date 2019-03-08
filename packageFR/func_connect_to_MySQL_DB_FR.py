@@ -2,16 +2,31 @@ import mysql.connector
 import time
 from mysql.connector import Error
 
-host='localhost'
-database='projet6'
-user='root'
-password='toor'
+def getConnectionParameters(filename):
+
+	try:
+		# ouvre notre fichier filename et récupère les informations de la première ligne séparées par un espace
+		with open(filename, mode='r', encoding='utf-8') as database_file:
+			for parameters in database_file:
+				host = parameters.split()[0]
+				database = parameters.split()[1]
+				user = parameters.split()[2]
+				password = parameters.split()[3]
+		return host, database, user, password
+
+	except IOError:
+		print ("Erreur: impossible d'accéder à databaseParameters.txt.")
+
 
 def insertToTableForUsers(warning,usersConcerned,sizeExceeded):
 
 	try:
+		#on récupère les informations de connexion à notre BDD dans notre fichier databaseParameters.txt
+		host, database, user, password = getConnectionParameters('databaseParameters.txt')
+		#on initie la connexion
 		connection = mysql.connector.connect(host=host, database=database, user=user, password=password, use_pure=True)
 		cursor = connection.cursor(prepared=True)
+
 		#on prépare notre requête en spécifiant des %s comme value, ce qui va nous permettre d'insérer nos variables peu après
 		sql_insert_query = """ INSERT INTO `datafromusers` (`warning`,`usersConcerned`,`sizeExceeded`) VALUES (%s,%s,%s)"""
 		#on prépare l'insertion de nos valeurs
@@ -35,6 +50,7 @@ def insertToTableForUsers(warning,usersConcerned,sizeExceeded):
 def insertToTableForSharedFolder(totalSizeUsed):
 
 	try:
+		host, database, user, password = getConnectionParameters('databaseParameters.txt')
 		connection = mysql.connector.connect(host=host, database=database, user=user, password=password, use_pure=True)
 		cursor = connection.cursor(prepared=True)
 		#on prépare notre requête en spécifiant des %s comme value, ce qui va nous permettre d'insérer nos variables peu après

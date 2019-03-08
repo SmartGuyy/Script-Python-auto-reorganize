@@ -1,0 +1,150 @@
+2019-03-04
+
+
+File analyzed :
+directorytosort/z_test_file_other_user.txt
+Last modification: Sat Feb 23 13:35:53 2019
+Created: Sat Feb 23 13:35:38 2019
+Owner of the file is DESKTOP-J85DKKR\TestUser
+The file is recent and will be archived in 115 hour.
+File size is 9.287 Kb or 0.009287Mb
+
+
+File analyzed :
+directorytosort/417.71-desktop-win10-64bit-international-whql - Copie.exe
+Last modification: Sat Feb  9 22:58:40 2019
+Created: Wed Feb 27 14:28:45 2019
+Owner of the file is DESKTOP-J85DKKR\Franz
+The file is recent and will be archived in 212 hour.
+File size is 571505.016 Kb or 571.505016Mb
+
+
+File analyzed :
+directorytosort/417.71-desktop-win10-64bit-international-whql.exe
+Last modification: Sat Feb  9 22:58:40 2019
+Created: Wed Feb 27 14:28:29 2019
+Owner of the file is DESKTOP-J85DKKR\Franz
+The file is recent and will be archived in 212 hour.
+File size is 571505.016 Kb or 571.505016Mb
+
+
+File analyzed :
+directorytosort/a_test_file_other_user.txt
+Last modification: Sat Feb 23 13:35:53 2019
+Created: Sat Feb 23 13:36:04 2019
+Owner of the file is DESKTOP-J85DKKR\TestUser
+The file is recent and will be archived in 115 hour.
+File size is 9.287 Kb or 0.009287Mb
+
+
+File analyzed :
+directorytosort/log-2019-02-14.txt
+Last modification: Thu Feb 14 17:48:25 2019
+Created: Thu Feb 21 01:18:21 2019
+Owner of the file is DESKTOP-J85DKKR\Franz
+The file is recent and will be archived in 55 hour.
+File size is 2.298 Kb or 0.002298Mb
+
+
+File analyzed :
+directorytosort/qsfq - Copie.txt
+Last modification: Thu Feb 21 01:50:31 2019
+Created: Thu Feb 21 01:50:26 2019
+Owner of the file is DESKTOP-J85DKKR\Franz
+The file is recent and will be archived in 55 hour.
+File size is 20.356 Kb or 0.020356Mb
+
+
+File analyzed :
+directorytosort/qsfq.txt
+Last modification: Thu Feb 21 01:50:19 2019
+Created: Thu Feb 21 01:49:58 2019
+Owner of the file is DESKTOP-J85DKKR\Franz
+The file is recent and will be archived in 55 hour.
+File size is 3.871 Kb or 0.003871Mb
+
+
+File analyzed :
+directorytosort/test empty folder\dfhfssd - Copie.txt
+Last modification: Wed Feb  6 23:34:42 2019
+Created: Thu Feb 21 01:32:15 2019
+Owner of the file is DESKTOP-J85DKKR\Franz
+The file is recent and will be archived in 55 hour.
+File size is 0.006 Kb or 6e-06Mb
+
+
+File analyzed :
+directorytosort/test empty folder\zar.txt
+Last modification: Wed Feb  6 23:34:42 2019
+Created: Thu Feb 21 01:32:15 2019
+Owner of the file is DESKTOP-J85DKKR\Franz
+The file is recent and will be archived in 55 hour.
+File size is 0.006 Kb or 6e-06Mb
+
+
+File analyzed :
+directorytosort/test-manual.pdf
+Last modification: Wed Feb 20 17:08:30 2019
+Created: Thu Feb 21 02:14:34 2019
+Owner of the file is DESKTOP-J85DKKR\Franz
+The file is recent and will be archived in 56 hour.
+File size is 14237.076 Kb or 14.237076Mb
+
+
+File analyzed :
+directorytosort/testuser-417.71-desktop-win10-64bit-international-whql - Copie.exe
+Last modification: Sat Feb  9 22:58:40 2019
+Created: Wed Feb 27 15:29:11 2019
+Owner of the file is DESKTOP-J85DKKR\TestUser
+The file is recent and will be archived in 213 hour.
+File size is 571505.016 Kb or 571.505016Mb
+
+
+File analyzed :
+directorytosort/testuser-417.71-desktop-win10-64bit-international-whql.exe
+Last modification: Sat Feb  9 22:58:40 2019
+Created: Wed Feb 27 15:29:03 2019
+Owner of the file is DESKTOP-J85DKKR\TestUser
+The file is recent and will be archived in 213 hour.
+File size is 571505.016 Kb or 571.505016Mb
+
+
+File analyzed :
+directorytosort/test_file_from_another_user.txt
+Last modification: Sat Feb 23 02:42:14 2019
+Created: Sat Feb 23 02:41:41 2019
+Owner of the file is DESKTOP-J85DKKR\TestUser
+The file is recent and will be archived in 104 hour.
+File size is 0.368 Kb or 0.000368Mb
+
+
+File analyzed :
+directorytosort/zafqsf.txt
+Last modification: Sat Feb 23 13:34:49 2019
+Created: Sat Feb 23 13:34:43 2019
+Owner of the file is DESKTOP-J85DKKR\Franz
+The file is recent and will be archived in 115 hour.
+File size is 0.005 Kb or 5e-06Mb
+
+
+File analyzed :
+directorytosort/z_test_file_other_user.txt
+Last modification: Sat Feb 23 13:35:53 2019
+Created: Sat Feb 23 13:35:38 2019
+Owner of the file is DESKTOP-J85DKKR\TestUser
+The file is recent and will be archived in 115 hour.
+File size is 9.287 Kb or 0.009287Mb
+
+
+User TestUser is using 1143038 Kb or 1143 Mb.
+Alert : user TestUser uses more than 1 Giga of storage on the entire folder.
+All the data were correctly registered in database.
+
+
+User Franz is using 1157273 Kb or 1157 Mb.
+Alert : user Franz uses more than 1 Giga of storage on the entire folder.
+All the data were correctly registered in database.
+
+
+Total size of folder is more than 2.30 Gb.
+All the data were correctly registered in database.
