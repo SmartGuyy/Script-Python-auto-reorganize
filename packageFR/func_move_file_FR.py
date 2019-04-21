@@ -15,4 +15,6 @@ def movefile(filetomove, destination):
 		shutil.move(filetomove, destination)
 
 	except IOError:
-		print ("Erreur: impossible de déplacer le fichier.")
+		#erreur sys.exit (1)
+		sys.exit("Erreur: impossible de déplacer le fichier.")
+

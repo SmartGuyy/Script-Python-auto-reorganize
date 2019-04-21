@@ -1,0 +1,75 @@
+2019-04-22
+
+
+Fichier suivant :
+directorytosort/zafqsf.txt
+Dernière modification le: Sat Feb 23 13:34:49 2019
+Créé le: Fri Apr 19 16:09:02 2019
+Le propriétaire du fichier est DESKTOP-J85DKKR\Franz
+Le fichier est récent et sera archivé dans 278 heures.
+La taille du fichier est de 0.005 Ko ou 5e-06Mo
+
+
+Fichier suivant :
+directorytosort/db-4.8.30.NC.tar - Copie.gz
+Dernière modification le: Fri Apr 30 17:09:52 2010
+Créé le: Fri Apr 19 16:22:00 2019
+Le propriétaire du fichier est DESKTOP-J85DKKR\Franz
+Le fichier est récent et sera archivé dans 278 heures.
+La taille du fichier est de 22842.33 Ko ou 22.84233Mo
+
+
+Fichier suivant :
+directorytosort/log-2019-02-14.txt
+Dernière modification le: Thu Feb 14 17:48:25 2019
+Créé le: Fri Apr 19 16:10:25 2019
+Le propriétaire du fichier est DESKTOP-J85DKKR\Franz
+Le fichier est récent et sera archivé dans 278 heures.
+La taille du fichier est de 2.298 Ko ou 0.002298Mo
+
+
+Fichier suivant :
+directorytosort/test empty folder\test sub-sub-folder\db-4.8.30.NC.tar.gz
+Dernière modification le: Fri Apr 30 17:09:52 2010
+Créé le: Fri Apr 19 16:20:37 2019
+Le propriétaire du fichier est DESKTOP-J85DKKR\Franz
+Le fichier est récent et sera archivé dans 278 heures.
+La taille du fichier est de 22842.33 Ko ou 22.84233Mo
+
+
+Fichier suivant :
+directorytosort/test-manual.pdf
+Dernière modification le: Wed Feb 20 17:08:30 2019
+Créé le: Fri Apr 19 16:09:02 2019
+Le propriétaire du fichier est DESKTOP-J85DKKR\Franz
+Le fichier est récent et sera archivé dans 278 heures.
+La taille du fichier est de 14237.076 Ko ou 14.237076Mo
+
+
+Fichier suivant :
+directorytosort/testuser-417.71-desktop-win10-64bit-international-whql - Copie - Copie (2).exe
+Dernière modification le: Sat Feb  9 22:58:40 2019
+Créé le: Fri Apr 19 16:22:04 2019
+Le propriétaire du fichier est DESKTOP-J85DKKR\Franz
+Le fichier est récent et sera archivé dans 278 heures.
+La taille du fichier est de 571505.016 Ko ou 571.505016Mo
+
+
+Fichier suivant :
+directorytosort/zafqsf.txt
+Dernière modification le: Sat Feb 23 13:34:49 2019
+Créé le: Fri Apr 19 16:09:02 2019
+Le propriétaire du fichier est DESKTOP-J85DKKR\Franz
+Le fichier est récent et sera archivé dans 278 heures.
+La taille du fichier est de 0.005 Ko ou 5e-06Mo
+
+
+L'utilisateur Franz utilise 631429 Ko ou 631 Mo.
+Tout va bien.
+
+
+Le poids total du dossier fait plus de 0.63 Go.
+Les données ont bien étées enregistrées dans la base de données.
+
+
+Le script s'est éxecuté sans erreurs.

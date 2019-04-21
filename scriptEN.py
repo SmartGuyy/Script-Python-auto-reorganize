@@ -84,11 +84,14 @@ while i < numberOfFiles:
 	print ("Created: %s" % time.ctime(os.path.getctime(filesInFolder[i])) )
 	print ("Owner of the file is %s\\%s" % (domain, name))
 	
+
 	if fileCreationTime < twoWeeksAgo :
 		print ("The file is older than 2 weeks, so it has been moved to the archive folder of its creator.")
 		
+		#delete name of file after last slash
+		getPathOnly = "/".join(fichiersDansDossier[i].split("/")[:-1])
 		# we call our function movefile of our file func_move_file
-		movefile(filesInFolder[i], "archives\\"+name)
+		movefile(fichiersDansDossier[i], "archives\\"+name+"\\"+getPathOnly)
 
 	else :
 		
@@ -138,3 +141,8 @@ print ("\n") # empty line
 # "%.2f" % is the formula to leave only 2 decimals
 print ("Total size of folder is more than %.2f" %  totalSizeUsed +" Gb.")
 insertToTableForSharedFolder("%.2f" % totalSizeUsed +" Gb")
+
+#Script execution was successful
+print ("\n") # empty line
+print("Script execution was successful.")
+sys.exit(0)

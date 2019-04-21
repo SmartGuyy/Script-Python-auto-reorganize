@@ -5,8 +5,8 @@ from string import Template
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-def get_SMTP_informations
-
+def get_SMTP_informations():
+	
 	"""
 	Retourne 4 valeurs: MY_ADDRESS, PASSWORD, SMTP_ADDRESS et SMTP_PORT contenant les identifiants et adresse pour l'envoi de mail
 	lu à partir de filename
@@ -22,7 +22,8 @@ def get_SMTP_informations
 		return MY_ADDRESS, PASSWORD, SMTP_ADDRESS, SMTP_PORT
 
 	except IOError:
-		print ("Erreur: impossible d'accéder à SMTPinformations.txt.")
+		#erreur sys.exit (1)
+		sys.exit("Erreur: impossible d'accéder à SMTPinformations.txt.")
 
 def get_contacts(filename):
 	"""
@@ -40,7 +41,8 @@ def get_contacts(filename):
 		return names, emails
 
 	except IOError:
-		print ("Erreur: impossible d'accéder à contacts.txt.")
+		#erreur sys.exit (1)
+		sys.exit("Erreur: impossible d'accéder à contacts.txt.")
 
 def read_template(filename):
 	"""
@@ -89,8 +91,10 @@ def sendMail():
 			
 		# On déconnecte la session SMTP et on quitte.
 		s.quit()
+
 	except IOError:
-		print ("Erreur: vérifiez vos informations SMTP ou le nom des fichiers.")
+		#erreur sys.exit (1)
+		sys.exit("Erreur: vérifiez vos informations SMTP ou le nom des fichiers.")
 	
 if __name__ == '__sendMail__':
 	sendMail()

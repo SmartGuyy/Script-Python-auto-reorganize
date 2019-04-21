@@ -8,4 +8,5 @@ def getPathDirectoryToSort(filename):
 		return path
 
 	except IOError:
-		print ("Erreur: impossible d'accéder à pathdirectory.txt.")
+		#erreur sys.exit (1)
+		sys.exit("Erreur: impossible d'accéder à pathdirectory.txt.")

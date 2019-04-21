@@ -25,4 +25,5 @@ def getListOfFiles(dirName):
 		return allFiles
 
 	except IOError:
-		print ("Error: cannot get list of files.")
+		#error sys.exit (1)
+		sys.exit("Error: cannot get list of files.")

@@ -5,7 +5,7 @@ from string import Template
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-def get_SMTP_informations
+def get_SMTP_informations():
 
 	"""
 	Returns 4 values: MY_ADDRESS, PASSWORD, SMTP_ADDRESS and SMTP_PORT containing the identifiers and address for sending mail
@@ -22,7 +22,8 @@ def get_SMTP_informations
 		return MY_ADDRESS, PASSWORD, SMTP_ADDRESS, SMTP_PORT
 
 	except IOError:
-		print ("Error: cannot get in SMTPinformations.txt.")
+		#error sys.exit (1)
+		sys.exit("Error: cannot get in SMTPinformations.txt.")
 
 def get_contacts(filename):
 	"""
@@ -41,7 +42,8 @@ def get_contacts(filename):
 		return names, emails
 
 	except IOError:
-		print ("Error: cannot get contacts in contacts.txt.")
+		#error sys.exit (1)
+		sys.exit("Error: cannot get contacts in contacts.txt.")
 
 def read_template(filename):
 	"""
@@ -92,7 +94,8 @@ def sendMail():
 		# Terminate the SMTP session and close the connection
 		s.quit()
 	except IOError:
-		print ("Error: sopmething is wrong with sendMail function.")
+		#error sys.exit (1)
+		sys.exit("Error: sopmething is wrong with sendMail function.")
 	
 if __name__ == '__sendMail__':
 	sendMail()

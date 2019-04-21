@@ -14,5 +14,6 @@ def movefile(filetomove, destination):
 		shutil.move(filetomove, destination)
 
 	except IOError:
-		print ("Error: cannot move file.")
+		#error sys.exit (1)
+		sys.exit("Error: cannot move file.")
 	

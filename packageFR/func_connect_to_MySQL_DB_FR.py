@@ -15,7 +15,8 @@ def getConnectionParameters(filename):
 		return host, database, user, password
 
 	except IOError:
-		print ("Erreur: impossible d'accéder à databaseParameters.txt.")
+		#erreur sys.exit (1)
+		sys.exit("Erreur: impossible d'accéder à databaseParameters.txt.")
 
 
 def insertToTableForUsers(warning,usersConcerned,sizeExceeded):
@@ -39,9 +40,12 @@ def insertToTableForUsers(warning,usersConcerned,sizeExceeded):
 
 	except mysql.connector.Error as error:
 		connection.rollback()
-		print("Erreur de paramètres: {}".format(error))
+
+		#erreur sys.exit (1)
+		sys.exit("Erreur de paramètres: {}".format(error))
 
 	finally:
+
 		# on ferme la connexion
 		if (connection.is_connected()):
 			cursor.close()
@@ -65,7 +69,9 @@ def insertToTableForSharedFolder(totalSizeUsed):
 
 	except mysql.connector.Error as error:
 		connection.rollback()
-		print("Erreur de paramètres: {}".format(error))
+
+		#erreur sys.exit (1)
+		sys.exit("Erreur de paramètres: {}".format(error))
 
 	finally:
 		# on ferme la connexion

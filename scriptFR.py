@@ -25,7 +25,8 @@ try:
 	sys.stdout = open("log-"+date+".txt", "w")
 
 except IOError:
-	print ("Erreur: impossible de créer le fichier log.")
+	#erreur sys.exit (1)
+	sys.exit("Erreur: impossible de créer le fichier log.")
 
 # le dossier qui sera trié
 myPath = getPathDirectoryToSort('pathdirectory.txt')
@@ -85,12 +86,15 @@ while i < nombreDeFichiers:
 	print ("Dernière modification le: %s" % time.ctime(os.path.getmtime(fichiersDansDossier[i])))
 	print ("Créé le: %s" % time.ctime(os.path.getctime(fichiersDansDossier[i])) )
 	print ("Le propriétaire du fichier est %s\\%s" % (domain, name))
+
 	
 	if fileCreationTime < twoWeeksAgo :
 		print ("Le fichier est vieux de plus de 2 semaines, il a donc été déplacé vers le dossier d'archivage de son créateur.")
 		
+		#formule pour supprimer le nom du fichier après le dernier slash
+		getPathOnly = "/".join(fichiersDansDossier[i].split("/")[:-1])
 		# on appelle notre fonction movefile de notre fichier func_move_file
-		movefile(fichiersDansDossier[i], "archives\\"+name)
+		movefile(fichiersDansDossier[i], "archives\\"+name+"\\"+getPathOnly)
 
 	else :
 		
@@ -137,3 +141,9 @@ print ("\n") # on ajoute une ligne vide pour espacer le tout
 # "%.2f" % est la formule pour laisser seulement 2 décimales
 print ("Le poids total du dossier fait plus de %.2f" %  totalSizeUsed +" Go.")
 insertToTableForSharedFolder("%.2f" % totalSizeUsed +" Go")
+
+#le script s'est exécuté sans erreurs
+print ("\n") # on ajoute une ligne vide pour espacer le tout
+print("Le script s'est éxecuté sans erreurs.")
+sys.exit(0)
+
