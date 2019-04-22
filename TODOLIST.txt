@@ -1,0 +1,4 @@
+Axes d'amélioration :
+Modifier README pour la création de la base de donnée via script .sql
+Durée avant archivage en paramètre à passer (avec une éventuelle valeur par défaut à 14 jours)
+Ne faire qu'un seul script (en anglais au niveau des fonctions et des variables) et ajouter une classe pour la gestion des langues (cette classe sera appelée pour les affichages d'infos par le script et "chargera" un fichier texte par langue si besoin
