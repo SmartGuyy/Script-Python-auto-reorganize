@@ -1,4 +1,6 @@
-Axes d'amÈlioration :
-Modifier README pour la crÈation de la base de donnÈe via script .sql
-DurÈe avant archivage en paramËtre ‡ passer (avec une Èventuelle valeur par dÈfaut ‡ 14 jours)
-Ne faire qu'un seul script (en anglais au niveau des fonctions et des variables) et ajouter une classe pour la gestion des langues (cette classe sera appelÈe pour les affichages d'infos par le script et "chargera" un fichier texte par langue si besoin
+Axes d'am√©lioration :
+
+- Diff√©rents fichiers logs (errors.log, access.log, etc...)
+- Modifier README pour la cr√©ation de la base de donn√©e via script .sql
+- Dur√©e avant archivage en param√®tre √† passer (avec une √©ventuelle valeur par d√©faut √† 14 jours)
+- Ne faire qu'un seul script (en anglais au niveau des fonctions et des variables) et ajouter une classe pour la gestion des langues (cette classe sera appel√©e pour les affichages d'infos par le script et "chargera" un fichier texte par langue si besoin
