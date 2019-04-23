@@ -91,7 +91,13 @@ while i < numberOfFiles:
 		#delete name of file after last slash
 		getPathOnly = "/".join(fichiersDansDossier[i].split("/")[:-1])
 		# we call our function movefile of our file func_move_file
-		movefile(fichiersDansDossier[i], "archives\\"+name+"\\"+getPathOnly)
+		try :
+			movefile(fichiersDansDossier[i], "archives\\"+name+"\\"+getPathOnly)
+
+		except :
+			sys.exit("Error: file could not be moved.")
+
+		print ("The file is older than 2 weeks, so it has been moved to the archive folder of its creator.")
 
 	else :
 		

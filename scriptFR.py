@@ -89,12 +89,17 @@ while i < nombreDeFichiers:
 
 	
 	if fileCreationTime < twoWeeksAgo :
-		print ("Le fichier est vieux de plus de 2 semaines, il a donc été déplacé vers le dossier d'archivage de son créateur.")
-		
 		#formule pour supprimer le nom du fichier après le dernier slash
 		getPathOnly = "/".join(fichiersDansDossier[i].split("/")[:-1])
 		# on appelle notre fonction movefile de notre fichier func_move_file
-		movefile(fichiersDansDossier[i], "archives\\"+name+"\\"+getPathOnly)
+		
+		try :
+			movefile(fichiersDansDossier[i], "archives\\"+name+"\\"+getPathOnly)
+
+		except :
+			sys.exit("Erreur: le fichier n'a pas pu être déplacé.")
+
+		print ("Le fichier est vieux de plus de 2 semaines, il a donc été déplacé vers le dossier d'archivage de son créateur.")
 
 	else :
 		
